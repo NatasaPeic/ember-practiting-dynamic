@@ -1,0 +1,20 @@
+
+<h3>Products:</h3>
+
+{{!-- it is going to render each product --}}
+{{#each model as |test| }}
+<br>
+    {{!-- <h3>{{product.name}}</h3>
+    <li>Manufacturer:{{product.manufacturer}}</li>
+    <li>Price: ${{product.price}}</li> --}}
+
+
+    {{!-- insted of having hard coded data, we can use helpers {{#link-to}} to access specific page products/:product_id --}}
+
+    {{#link-to 'product' test tagName='h4'}}
+       <a href="#">{{test.name}}</a>
+    {{/link-to}}
+
+{{/each}}
+
+{{!-- {{#link-to 'application'}}Go back{{/link-to}} --}}
